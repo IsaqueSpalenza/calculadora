@@ -1,23 +1,26 @@
 # Definição da função adicionar, que irá somar dois números.
 # A função ainda não foi implementada, então usamos 'pass' temporariamente.
 def adicionar(a, b):
-    pass  # TODO: Implementar função de adição
+   return a + b
 
 # Definição da função subtrair, que será responsável por subtrair o segundo número do primeiro.
 # Assim como a função de adição, ainda não está implementada e usa 'pass' como placeholder.
 def subtrair(a, b):
-    pass  # TODO: Implementar função de subtração
+    return a - b
 
 # Definição da função multiplicar, que multiplicará dois números.
 # Também não foi implementada ainda, e 'pass' é usado para marcar a implementação futura.
 def multiplicar(a, b):
-    pass  # TODO: Implementar função de multiplicação
+    return a * b
 
 # Definição da função dividir, que fará a divisão do primeiro número pelo segundo.
 # Novamente, a função ainda não foi implementada, e 'pass' é utilizado.
 # É importante que no futuro seja tratado o caso de divisão por zero.
 def dividir(a, b):
-    pass  # TODO: Implementar função de divisão
+    return a / b
+
+def potencia(a, b):
+    return a ** b
 
 # Função principal da calculadora, responsável por interagir com o usuário e realizar operações.
 def calculadora():
@@ -27,9 +30,10 @@ def calculadora():
     print("2.Subtração")
     print("3.Multiplicação")
     print("4.Divisão")
+    print("5.Potência")
 
     # Recebe a escolha da operação do usuário.
-    escolha = input("Digite a opção (1/2/3/4): ")
+    escolha = input("Digite a opção (1/2/3/4/5): ")
 
     # Solicita dois números do usuário e converte-os para o tipo float.
     num1 = float(input("Digite o primeiro número: "))
@@ -48,7 +52,14 @@ def calculadora():
     elif escolha == '4':
         # Se o usuário escolheu divisão, chama a função dividir e exibe o resultado.
         # No futuro, deve-se validar para evitar divisão por zero.
-        print(f"{num1} / {num2} = {dividir(num1, num2)}")
+        if num2 == 0:
+            print("Não é possivel fazer divisão por 0")
+            print(f"{num1} / {num2} não são divisíveis")
+        else:
+            print(f"{num1} / {num2} = {dividir(num1, num2)}")
+    elif escolha =='5':
+        # Se o usuário escolheu potenciação, chama a função potencia e exive o resultado
+        print(f"{num1} elevado a {num2} = {potencia(num1, num2)}")
     else:
         # Se o usuário inserir uma opção inválida, exibe uma mensagem de erro.
         print("Opção inválida")
